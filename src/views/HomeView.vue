@@ -1,9 +1,18 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import { useRouter } from 'vue-router'
+const router = useRouter()
+const toResisterView = () => {
+  router.push('/resister')
+}
+const toConfirmView = () => {
+  router.push('/confirm')
+}
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <div>
+    <h2>Wordbook</h2>
+    <button @click="toResisterView">登録</button>
+    <button @click="toConfirmView">確認</button>
+  </div>
 </template>
