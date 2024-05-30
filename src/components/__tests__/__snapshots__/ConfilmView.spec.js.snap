@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ConfilmView > renders properly 1`] = `
+"<div>
+  <h2>確認</h2>
+  <p>英単語: apple</p>
+  <p>意味: りんご</p>
+  <p><button>次へ</button></p>
+  <p><button>Homeへ戻る</button></p>
+</div>"
+`;
