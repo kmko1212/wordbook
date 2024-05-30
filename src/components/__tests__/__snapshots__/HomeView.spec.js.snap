@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`HomeView > renders properly 1`] = `
+"<div>
+  <h2>Wordbook</h2><button>登録</button><button>確認</button>
+</div>"
+`;

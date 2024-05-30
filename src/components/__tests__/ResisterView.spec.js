@@ -1,11 +1,11 @@
 import { describe, it, expect } from 'vitest'
 
 import { mount } from '@vue/test-utils'
-import HomeView from '../../views/HomeView.vue'
+import RegisterView from '../../views/RegisterView.vue'
 
-describe('HomeView', () => {
+describe('RegisterView', () => {
   it('renders properly', () => {
-    const wrapper = mount(HomeView)
+    const wrapper = mount(RegisterView)
     expect(wrapper.html()).toMatchSnapshot()
   })
 })

@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`RegisterView > renders properly 1`] = `
+"<div>
+  <h2>登録</h2>
+  <p>英単語: </p><input placeholder="英単語を入力">
+  <p>意味: </p><input placeholder="意味を入力">
+  <p><button>登録</button></p>
+  <p><button>Homeへ戻る</button></p>
+</div>"
+`;
