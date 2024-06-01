@@ -27,8 +27,12 @@ const getWord = (wordKey) => {
   meaning.value = wordObj.meaning
 }
 
-const toHomeView = () => {
-  router.push('/')
+const toHomeView = async () => {
+  try {
+    await router.push('/')
+  } catch (error) {
+    console.error(error)
+  }
 }
 </script>
 
@@ -37,7 +41,7 @@ const toHomeView = () => {
     <h2>確認</h2>
     <p>英単語: {{ word }}</p>
     <p>意味: {{ meaning }}</p>
-    <p><button @click="toNextWord">次へ</button></p>
-    <p><button @click="toHomeView">Homeへ戻る</button></p>
+    <p><button id="button-next" @click="toNextWord">次へ</button></p>
+    <p><button id="button-home" @click="toHomeView">Homeへ戻る</button></p>
   </div>
 </template>
