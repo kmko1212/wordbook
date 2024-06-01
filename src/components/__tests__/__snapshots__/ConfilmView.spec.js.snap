@@ -5,7 +5,7 @@ exports[`ConfilmView > renders properly 1`] = `
   <h2>確認</h2>
   <p>英単語: apple</p>
   <p>意味: りんご</p>
-  <p><button>次へ</button></p>
-  <p><button>Homeへ戻る</button></p>
+  <p><button id="button-next">次へ</button></p>
+  <p><button id="button-home">Homeへ戻る</button></p>
 </div>"
 `;
