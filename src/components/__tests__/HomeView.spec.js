@@ -3,8 +3,7 @@ import { describe, it, expect, beforeEach } from 'vitest'
 
 import { mount } from '@vue/test-utils'
 import HomeView from '../../views/HomeView.vue'
-
-import ResisterView from '../../views/RegisterView.vue'
+import RegisterView from '../../views/RegisterView.vue'
 import ConfirmView from '../../views/ConfirmView.vue'
 
 let router
@@ -21,7 +20,7 @@ beforeEach(() => {
       {
         path: '/resister',
         name: 'resister',
-        component: ResisterView
+        component: RegisterView
       },
       {
         path: '/confirm',
