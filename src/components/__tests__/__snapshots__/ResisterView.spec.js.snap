@@ -1,11 +1,13 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`RegisterView > renders properly 1`] = `
-"<div>
-  <h2>登録</h2>
-  <p>英単語: </p><input placeholder="英単語を入力">
-  <p>意味: </p><input placeholder="意味を入力">
-  <p><button id="button-register">登録</button></p>
-  <p><button id="button-home">Homeへ戻る</button></p>
-</div>"
+"<v-container>
+  <v-sheet class="w-50">
+    <div class="text-h3 pb-5">登録</div>
+    <v-text-field label="英単語" placeholder="英単語を入力" type="input" modelvalue=""></v-text-field>
+    <v-text-field label="意味" placeholder="意味を入力" type="input" modelvalue=""></v-text-field>
+    <v-btn class="ml-5 mt-5" id="button-register">登録</v-btn>
+    <v-btn class="ml-5 mt-5" id="button-home">Homeへ戻る</v-btn>
+  </v-sheet>
+</v-container>"
 `;

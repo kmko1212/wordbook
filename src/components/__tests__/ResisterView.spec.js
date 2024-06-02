@@ -1,3 +1,4 @@
+import { createVuetify } from 'vuetify'
 import { createRouter, createMemoryHistory } from 'vue-router'
 import { describe, it, expect, beforeEach } from 'vitest'
 import { mount } from '@vue/test-utils'
@@ -6,6 +7,7 @@ import RegisterView from '../../views/RegisterView.vue'
 import ConfirmView from '../../views/ConfirmView.vue'
 
 let router
+const vuetify = createVuetify()
 
 beforeEach(() => {
   router = createRouter({
@@ -32,11 +34,11 @@ beforeEach(() => {
 
 describe('RegisterView', () => {
   it('renders properly', () => {
-    const wrapper = mount(RegisterView, { global: { plugins: [router] } })
+    const wrapper = mount(RegisterView, { global: { plugins: [router, vuetify] } })
     expect(wrapper.html()).toMatchSnapshot()
   })
   it('navigates to / when #button-home is clicked', async () => {
-    const wrapper = mount(RegisterView, { global: { plugins: [router] } })
+    const wrapper = mount(RegisterView, { global: { plugins: [router, vuetify] } })
 
     await wrapper.find('#button-home').trigger('click')
 
@@ -45,7 +47,7 @@ describe('RegisterView', () => {
     expect(router.currentRoute.value.path).toBe('/')
   })
   it('saves word and meaning to localStorage when onRegister is called', async () => {
-    const wrapper = mount(RegisterView, { global: { plugins: [router] } })
+    const wrapper = mount(RegisterView, { global: { plugins: [router, vuetify] } })
 
     const vm = wrapper.vm
     vm.key = 1
