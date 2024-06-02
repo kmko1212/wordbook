@@ -18,9 +18,26 @@ const toConfirmView = async () => {
 </script>
 
 <template>
-  <div>
-    <h2>Wordbook</h2>
-    <button id="button-resister" @click="toResisterView">登録</button>
-    <button id="button-confirm" @click="toConfirmView">確認</button>
-  </div>
+  <v-container>
+    <v-btn
+      color="primary"
+      size="x-large"
+      rounded="lg"
+      variant="flat"
+      class="ml-5 mt-5"
+      id="button-resister"
+      @click="toResisterView"
+      >登録</v-btn
+    >
+    <v-btn
+      color="secondary"
+      size="x-large"
+      rounded="lg"
+      variant="flat"
+      class="ml-5 mt-5"
+      id="button-confirm"
+      @click="toConfirmView"
+      >確認</v-btn
+    >
+  </v-container>
 </template>
