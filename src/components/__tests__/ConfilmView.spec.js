@@ -1,3 +1,4 @@
+import { createVuetify } from 'vuetify'
 import { createRouter, createMemoryHistory } from 'vue-router'
 import { describe, it, expect, beforeEach } from 'vitest'
 import { reactive } from 'vue'
@@ -13,6 +14,7 @@ const wordObj = reactive({
 })
 
 let router
+const vuetify = createVuetify()
 
 beforeEach(() => {
   router = createRouter({
@@ -61,7 +63,7 @@ beforeEach(() => {
 
 describe('ConfilmView', () => {
   it('renders properly', async () => {
-    const wrapper = mount(ConfirmView, { global: { plugins: [router] } })
+    const wrapper = mount(ConfirmView, { global: { plugins: [router, vuetify] } })
     const vm = wrapper.vm
     vm.word = wordObj.word
     vm.meaning = wordObj.meaning
@@ -69,7 +71,7 @@ describe('ConfilmView', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
   it('navigates to / when #button-home is clicked', async () => {
-    const wrapper = mount(ConfirmView, { global: { plugins: [router] } })
+    const wrapper = mount(ConfirmView, { global: { plugins: [router, vuetify] } })
 
     await wrapper.find('#button-home').trigger('click')
 
@@ -78,13 +80,13 @@ describe('ConfilmView', () => {
     expect(router.currentRoute.value.path).toBe('/')
   })
   it('when getWord is called with 3', () => {
-    const wrapper = mount(ConfirmView, { global: { plugins: [router] } })
+    const wrapper = mount(ConfirmView, { global: { plugins: [router, vuetify] } })
     wrapper.vm.getWord(3)
     expect(wrapper.vm.word).toBe('banana')
     expect(wrapper.vm.meaning).toBe('バナナ')
   })
   it('when toNextWord is called', async () => {
-    const wrapper = mount(ConfirmView, { global: { plugins: [router] } })
+    const wrapper = mount(ConfirmView, { global: { plugins: [router, vuetify] } })
 
     const vm = wrapper.vm
     vm.key = 1

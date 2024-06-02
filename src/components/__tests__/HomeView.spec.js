@@ -1,3 +1,4 @@
+import { createVuetify } from 'vuetify'
 import { createRouter, createMemoryHistory } from 'vue-router'
 import { describe, it, expect, beforeEach } from 'vitest'
 
@@ -7,6 +8,7 @@ import RegisterView from '../../views/RegisterView.vue'
 import ConfirmView from '../../views/ConfirmView.vue'
 
 let router
+const vuetify = createVuetify()
 
 beforeEach(() => {
   router = createRouter({
@@ -33,12 +35,12 @@ beforeEach(() => {
 
 describe('HomeView', () => {
   it('renders properly', () => {
-    const wrapper = mount(HomeView, { global: { plugins: [router] } })
+    const wrapper = mount(HomeView, { global: { plugins: [router, vuetify] } })
     expect(wrapper.html()).toMatchSnapshot()
   })
 
   it('navigates to /resister when #button-resister is clicked', async () => {
-    const wrapper = mount(HomeView, { global: { plugins: [router] } })
+    const wrapper = mount(HomeView, { global: { plugins: [router, vuetify] } })
 
     await wrapper.find('#button-resister').trigger('click')
 
@@ -48,7 +50,7 @@ describe('HomeView', () => {
   })
 
   it('navigates to /confirm when #button-confirm is clicked', async () => {
-    const wrapper = mount(HomeView, { global: { plugins: [router] } })
+    const wrapper = mount(HomeView, { global: { plugins: [router, vuetify] } })
 
     await wrapper.find('#button-confirm').trigger('click')
 

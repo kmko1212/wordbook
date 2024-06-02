@@ -37,11 +37,15 @@ const toHomeView = async () => {
 </script>
 
 <template>
-  <div>
-    <h2>確認</h2>
-    <p>英単語: {{ word }}</p>
-    <p>意味: {{ meaning }}</p>
-    <p><button id="button-next" @click="toNextWord">次へ</button></p>
-    <p><button id="button-home" @click="toHomeView">Homeへ戻る</button></p>
-  </div>
+  <v-container>
+    <v-sheet class="w-50">
+      <div class="text-h3 pb-5">確認</div>
+      <p class="text-subtitle-1">英単語:</p>
+      <p class="text-h5">{{ word }}</p>
+      <p class="text-subtitle-1">意味:</p>
+      <p class="text-h5">{{ meaning }}</p>
+      <v-btn class="ml-5 mt-5" id="button-next" @click="toNextWord">次へ</v-btn>
+      <v-btn class="ml-5 mt-5" id="button-home" @click="toHomeView">Homeへ戻る</v-btn>
+    </v-sheet>
+  </v-container>
 </template>

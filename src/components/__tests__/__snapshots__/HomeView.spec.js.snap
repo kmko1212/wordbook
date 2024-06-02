@@ -1,7 +1,8 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`HomeView > renders properly 1`] = `
-"<div>
-  <h2>Wordbook</h2><button id="button-resister">登録</button><button id="button-confirm">確認</button>
-</div>"
+"<v-container>
+  <v-btn color="primary" size="x-large" rounded="lg" variant="flat" class="ml-5 mt-5" id="button-resister">登録</v-btn>
+  <v-btn color="secondary" size="x-large" rounded="lg" variant="flat" class="ml-5 mt-5" id="button-confirm">確認</v-btn>
+</v-container>"
 `;

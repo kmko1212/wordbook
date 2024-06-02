@@ -38,13 +38,23 @@ const toHomeView = async () => {
 </script>
 
 <template>
-  <div>
-    <h2>登録</h2>
-    <p>英単語: {{ word }}</p>
-    <input v-model="word" placeholder="英単語を入力" />
-    <p>意味: {{ meaning }}</p>
-    <input v-model="meaning" placeholder="意味を入力" />
-    <p><button id="button-register" @click="onResister">登録</button></p>
-    <p><button id="button-home" @click="toHomeView">Homeへ戻る</button></p>
-  </div>
+  <v-container>
+    <v-sheet class="w-50">
+      <div class="text-h3 pb-5">登録</div>
+      <v-text-field
+        label="英単語"
+        placeholder="英単語を入力"
+        type="input"
+        v-model="word"
+      ></v-text-field>
+      <v-text-field
+        label="意味"
+        placeholder="意味を入力"
+        type="input"
+        v-model="meaning"
+      ></v-text-field>
+      <v-btn class="ml-5 mt-5" id="button-register" @click="onResister">登録</v-btn>
+      <v-btn class="ml-5 mt-5" id="button-home" @click="toHomeView">Homeへ戻る</v-btn>
+    </v-sheet>
+  </v-container>
 </template>
