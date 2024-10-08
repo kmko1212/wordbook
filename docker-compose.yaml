@@ -13,3 +13,17 @@ services:
     tty: true
     environment:
       - NODE_ENV=development
+    networks:
+      - default_network
+  mock-server:
+    image: stoplight/prism:5.5.1
+    command: "mock -h 0.0.0.0 /data/api-with-examples.yaml"
+    volumes:
+      - ./mock/api-wordbook.yaml:/data/api-with-examples.yaml
+    ports:
+      - 4010:4010
+    networks:
+      - default_network
+
+networks:
+  default_network:
